@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Varendra Pandey - Market Guru</title>
+    
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('set','autoConfig',false,'1305074204541714');
+fbq('init', '1305074204541714');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1305074204541714&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+</head>
+<body class="bg-[#f3f4f9] flex items-center justify-center min-h-screen p-4 font-sans">
+
+    <!-- Card Container -->
+    <div class="bg-white rounded-[32px] shadow-sm max-w-md w-full p-8 text-center border border-gray-100">
+        
+        <!-- Profile Image Placeholder (As per 106563.jpg) -->
+ <div class="w-32 h-32 mx-auto mb-6 bg-white rounded-full flex items-center justify-center shadow-md overflow-hidden border-2 border-gray-100">
+    <img src="https://agads.vercel.app/gtmmmm.jpeg" alt="Virendra Pandey Logo" class="w-full h-full object-cover">
+</div>
+
+        <!-- Heading & Stats -->
+        <h1 class="text-3xl font-extrabold text-gray-900 tracking-tight">GAUTAM KUMAR JHA (OFFICIAL)</h1>
+        <p class="text-gray-500 text-sm mt-1 mb-6">20,000+ learners • Trusted community</p>
+
+        <!-- Features List -->
+        <div class="text-left inline-block space-y-3 mb-8 text-gray-700 font-medium">
+            <div class="flex items-center gap-3">
+                <span>📊</span> <span>Market Education & Chart Reading</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <span>📈</span> <span>Nifty • BankNifty • Stock Analysis</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <span>🛡️</span> <span>Risk Management & Discipline</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <span>🎯</span> <span>Learn with clarity, not false promises</span>
+            </div>
+        </div>
+
+        <!-- Action Button -->
+        <button id="cta-button" class="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold py-4 px-6 rounded-2xl shadow-lg shadow-blue-500/30 hover:from-blue-700 hover:to-blue-800 transition duration-200 text-lg uppercase tracking-wide">
+            Join Telegram Channel
+        </button>
+
+        <!-- Star Rating -->
+        <div class="flex justify-center gap-1 my-4 text-yellow-400 text-xl">
+            ★★★★★
+        </div>
+        <p class="text-xs text-gray-400 font-medium mb-6">Rated highly by community learners</p>
+
+        <!-- Disclaimer -->
+        <div class="text-[11px] text-gray-400 leading-relaxed max-w-xs mx-auto border-t border-gray-100 pt-4">
+            Educational purpose only. No tips, no guarantees.<br>
+            Market participation involves risk.
+        </div>
+    </div>
+
+    <!-- Logic for One-Time Event Trigger -->
+    <script>
+        const targetUrl = "https://t.me/+DNwMImeuoYswMDU1"; // Apna Link yahan dalein
+        const button = document.getElementById('cta-button');
+
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            // Check agar is device pe pehle click ho chuka hai
+            if (localStorage.getItem('subscribe_event_fired') === 'true') {
+                console.log('Event already fired on this device. Redirecting directly...');
+                window.location.href = targetUrl;
+            } else {
+                console.log('Firing Subscribe event for the first time...');
+                
+                // Set localStorage taaki agli baar fire na ho
+                localStorage.setItem('subscribe_event_fired', 'true');
+
+                // Meta Pixel Subscribe Event
+                fbq('track', 'Subscribe');
+
+                // Chhota sa delay taaki pixel data properly capture ho sake redirect hone se pehle
+                setTimeout(function() {
+                    window.location.href = targetUrl;
+                }, 400); 
+            }
+        });
+    </script>
+
+</body>
+</html>
