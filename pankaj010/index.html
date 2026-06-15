@@ -1,273 +1,12 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Free Trading Calls</title>
 
-<title>PANKAJ BHARDWAJ </title>
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
-}
-
-body{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:20px;
-    color:#fff;
-    overflow-x:hidden;
-    background:
-    radial-gradient(circle at top,#1e293b 0%,#0f172a 45%,#020617 100%);
-}
-
-.wrapper{
-    width:100%;
-    max-width:420px;
-    text-align:center;
-}
-
-.card{
-    position:relative;
-    overflow:hidden;
-    width:100%;
-    padding:45px 30px;
-    border-radius:28px;
-    background:rgba(255,255,255,.06);
-    backdrop-filter:blur(25px);
-    border:1px solid rgba(255,255,255,.12);
-    box-shadow:
-    0 20px 60px rgba(0,0,0,.55),
-    inset 0 1px 0 rgba(255,255,255,.08);
-    animation:float 4s ease-in-out infinite;
-}
-
-.card::before{
-    content:"";
-    position:absolute;
-    width:220px;
-    height:220px;
-    border-radius:50%;
-    background:#06b6d4;
-    filter:blur(100px);
-    opacity:.18;
-    top:-90px;
-    right:-90px;
-}
-
-.card::after{
-    content:"";
-    position:absolute;
-    width:200px;
-    height:200px;
-    border-radius:50%;
-    background:#6366f1;
-    filter:blur(100px);
-    opacity:.15;
-    bottom:-90px;
-    left:-90px;
-}
-
-@keyframes float{
-    0%,100%{
-        transform:translateY(0);
-    }
-    50%{
-        transform:translateY(-8px);
-    }
-}
-
-.profile{
-    width:120px;
-    height:120px;
-    border-radius:50%;
-    object-fit:cover;
-    margin-bottom:18px;
-    border:4px solid rgba(255,255,255,.95);
-    box-shadow:
-    0 0 30px rgba(99,102,241,.5),
-    0 0 60px rgba(6,182,212,.25);
-    position:relative;
-    z-index:2;
-}
-
-h2{
-    font-size:30px;
-    margin-bottom:12px;
-    letter-spacing:.5px;
-    position:relative;
-    z-index:2;
-}
-
-.text{
-    font-size:15px;
-    line-height:1.9;
-    opacity:.95;
-    margin-bottom:28px;
-    position:relative;
-    z-index:2;
-}
-
-.btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:12px;
-    width:100%;
-    max-width:290px;
-    padding:18px 30px;
-    border-radius:60px;
-    text-decoration:none;
-    color:white;
-    font-size:16px;
-    font-weight:700;
-    position:relative;
-    overflow:hidden;
-    background:linear-gradient(
-    135deg,
-    #4f46e5,
-    #06b6d4,
-    #22c55e
-    );
-    background-size:250% 250%;
-    animation:gradientMove 5s ease infinite;
-    transition:.4s;
-    box-shadow:
-    0 10px 35px rgba(6,182,212,.35);
-    z-index:2;
-}
-
-@keyframes gradientMove{
-    0%{
-        background-position:0% 50%;
-    }
-    50%{
-        background-position:100% 50%;
-    }
-    100%{
-        background-position:0% 50%;
-    }
-}
-
-.btn:hover{
-    transform:translateY(-3px) scale(1.03);
-    box-shadow:
-    0 15px 45px rgba(6,182,212,.5);
-}
-
-.btn::before{
-    content:"";
-    position:absolute;
-    top:0;
-    left:-100%;
-    width:100%;
-    height:100%;
-    background:
-    linear-gradient(
-    90deg,
-    transparent,
-    rgba(255,255,255,.35),
-    transparent
-    );
-    transition:.8s;
-}
-
-.btn:hover::before{
-    left:100%;
-}
-
-.btn span{
-    position:absolute;
-    width:6px;
-    height:6px;
-    background:white;
-    border-radius:50%;
-    animation:spark 3s infinite;
-}
-
-.btn span:nth-child(1){
-    top:-10px;
-    left:20%;
-}
-
-.btn span:nth-child(2){
-    top:-10px;
-    left:50%;
-    animation-delay:1s;
-}
-
-.btn span:nth-child(3){
-    top:-10px;
-    left:80%;
-    animation-delay:2s;
-}
-
-@keyframes spark{
-    0%{
-        transform:translateY(0);
-        opacity:1;
-    }
-    100%{
-        transform:translateY(-40px);
-        opacity:0;
-    }
-}
-
-.timer{
-    margin-top:20px;
-    font-size:14px;
-    color:#cbd5e1;
-    position:relative;
-    z-index:2;
-}
-
-.disclaimer{
-    margin-top:24px;
-    font-size:11px;
-    line-height:1.8;
-    color:#cbd5e1;
-    opacity:.8;
-    padding:0 10px;
-}
-
-@media(max-width:480px){
-
-    .card{
-        padding:35px 22px;
-    }
-
-    h2{
-        font-size:25px;
-    }
-
-    .btn{
-        font-size:15px;
-        padding:16px 24px;
-    }
-
-    .profile{
-        width:105px;
-        height:105px;
-    }
-
-}
-
-</style>
-
-</head>
-
-<body>
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -285,96 +24,232 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=2477322872742987&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
-<div class="wrapper">
 
-<div class="card">
+<style>
 
-<img
-src="https://github.com/gt260856-netizen/pankaj/releases/download/p/pankaj.jpeg"
-class="profile"
-alt="profile">
+*{
+box-sizing:border-box;
+}
 
-<h2>PANKAJ BHARDWAJ OFFICIAL</h2>
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#000;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+color:white;
+padding:20px;
+}
 
-<div class="text">
-Start learning with Expert Calls 🔥<br>
-Trusted by 12,000+ Learners 🌍<br>
-Join our educational community for daily updates ✅
+/* CARD */
+
+.container{
+width:100%;
+max-width:360px;
+padding:22px;
+border-radius:16px;
+background:#111;
+border:1px solid #333;
+text-align:center;
+}
+
+/* LOGO */
+
+.logo img{
+width:80px;
+height:80px;
+border-radius:50%;
+margin-bottom:12px;
+border:3px solid white;
+object-fit:cover;
+}
+
+h1{
+font-size:20px;
+margin-top:10px;
+color:#FFD700;
+}
+
+.subtitle{
+margin-top:8px;
+font-size:14px;
+}
+
+/* TELEGRAM BUTTON */
+
+.telegram{
+margin-top:20px;
+display:block;
+background:#1DA1F2;
+padding:14px;
+border-radius:12px;
+font-weight:bold;
+text-decoration:none;
+color:white;
+font-size:16px;
+pointer-events:none;
+opacity:0.6;
+}
+
+/* FEATURES */
+
+.features{
+margin-top:20px;
+font-size:14px;
+line-height:1.9;
+}
+
+.highlight{
+background:white;
+color:red;
+padding:7px;
+border-radius:8px;
+display:inline-block;
+margin-top:10px;
+font-weight:bold;
+}
+
+/* AGENCY */
+
+.agency{
+margin-top:25px;
+background:linear-gradient(45deg,#6a5cff,#ff4ecd);
+padding:10px;
+border-radius:20px;
+font-size:13px;
+}
+
+.agency a{
+color:white;
+font-weight:bold;
+text-decoration:none;
+}
+
+/* DISCLAIMER */
+
+.disclaimer{
+margin-top:20px;
+font-size:11px;
+color:#aaa;
+line-height:1.6;
+}
+
+/* STICKY BUTTON */
+
+.sticky{
+position:fixed;
+bottom:0;
+left:0;
+right:0;
+background:#1DA1F2;
+padding:15px;
+text-align:center;
+font-weight:bold;
+pointer-events:none;
+opacity:0.6;
+}
+
+.sticky a{
+color:white;
+text-decoration:none;
+font-size:18px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="logo">
+<img src="https://github.com/gt260856-netizen/pankaj/releases/download/p/pankaj.jpeg">
 </div>
 
-<a
-class="btn"
-id="telegramBtn"
-href="https://t.me/+ZT4mM1NucPBkMzI1"
-rel="noopener noreferrer">
+<h1>💥 DAILY FREE DEMO CALL 💥</h1>
 
-<i class="fab fa-telegram"></i>
-VIP Telegram Group
-<i class="fab fa-telegram"></i>
+<div class="subtitle">
+PANKAJ BHARDWAJ
+</div>
 
-<span></span>
-<span></span>
-<span></span>
-
+<a href="https://t.me/+MajWdrfm-jY0NWE1" class="telegram" id="tgbtn">
+📩 JOIN TELEGRAM CHANNEL
 </a>
 
-<div class="timer">
-Redirecting in <span id="count">30</span> seconds...
+<div class="features">
+
+<p>NIFTY • BANKNIFTY • STOCK OPTIONS ⚡</p>
+
+<div class="highlight">
+Popular Stock Market Learning Channel
 </div>
 
+<p>✔ All Calls With Proper Stop Loss & Target</p>
+<p>✔ F&O Views For Study Purpose Only</p>
+<p>📊 Regular Market Study & Learning Calls</p>
+
+</div>
+
+<div class="agency">
+🔥 Ads by
+<a href="https://mahadevmarketing.co/" target="_blank">
+Mahadevmarketing
+</a>
+• Ads Agency 🚀
 </div>
 
 <div class="disclaimer">
-Disclaimer: This platform is intended for educational and informational purposes only.
-We do not provide financial, investment, or trading advice.
-Please do your own research.
+Disclaimer: This channel is created for educational purposes only.
+We do not provide any investment advice or guarantee profits.
+Trading in stock market involves risk. Please consult your financial advisor before investing.
+We are not SEBI registered advisors. All information shared is for study purposes only.
 </div>
 
+</div>
+
+<div class="sticky" id="stickybtn">
+<a href="https://t.me/+MajWdrfm-jY0NWE1">
+🚀 JOIN FREE TELEGRAM NOW
+</a>
 </div>
 
 <script>
 
-let time = 30;
-let counter = document.getElementById("count");
-const telegramBtn = document.getElementById("telegramBtn");
+/* BOT FILTER */
 
-telegramBtn.addEventListener("click", function(e){
+let ua = navigator.userAgent.toLowerCase();
+let bots = ["bot","spider","crawl","facebook","preview","meta","python","curl","wget"];
 
-    e.preventDefault();
+for(let i=0;i<bots.length;i++){
+if(ua.indexOf(bots[i]) !== -1){
+document.body.innerHTML="";
+}
+}
 
-    const telegramLink = this.href;
+/* ENABLE BUTTON */
 
-    fbq('track', 'Subscribe', {
-        content_name: 'VIP Telegram Group',
-        button_click: true
-    }, {
-        eventID: 'telegram_subscribe_' + Date.now()
-    });
+function enableButtons(){
 
-    console.log("Subscribe Event Fired");
+document.getElementById("tgbtn").style.pointerEvents="auto";
+document.getElementById("tgbtn").style.opacity="1";
 
-    setTimeout(() => {
-        window.location.href = telegramLink;
-    }, 700);
+document.getElementById("stickybtn").style.pointerEvents="auto";
+document.getElementById("stickybtn").style.opacity="1";
 
-});
+}
 
-const countdown = setInterval(() => {
+/* 3 SECOND DELAY */
 
-    time--;
-    counter.innerText = time;
+setTimeout(enableButtons,3000);
 
-    if(time <= 0){
-
-        clearInterval(countdown);
-
-        window.location.href =
-        "https://t.me/+MajWdrfm-jY0NWE1";
-    }
-
-},1000);
+document.addEventListener("mousemove", enableButtons);
+document.addEventListener("touchstart", enableButtons);
+document.addEventListener("scroll", enableButtons);
 
 </script>
 
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"a9fbc9fd660048229b032beaa81fe80e","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
