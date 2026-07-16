@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="te">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LEARN WITH MUNAAF</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 20px;
+
+            color: #ffffff;
+
+            overflow-x: hidden;
+
+            /* NEW PREMIUM BACKGROUND */
+
+            background:
+
+                radial-gradient(
+                    circle at top left,
+                    rgba(124, 58, 237, 0.35),
+                    transparent 35%
+                ),
+
+                radial-gradient(
+                    circle at bottom right,
+                    rgba(6, 182, 212, 0.25),
+                    transparent 35%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    #090014,
+                    #10002b,
+                    #06111f
+                );
+
+        }
+
+
+        /* SAME PATTERN PRESERVED */
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            z-index: -1;
+
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><g fill="%23a855f7" fill-opacity="0.06"><path d="M100 0 A 100 100 0 1 0 100 200 A 100 100 0 1 0 100 0 Z M 100 20 A 80 80 0 1 1 100 180 A 80 80 0 1 1 100 20 Z"/><circle cx="100" cy="100" r="10"/><path d="M100 50 L110 90 L100 100 L90 90 Z" /></g></svg>');
+
+            background-size: 150px 150px;
+
+            background-repeat: repeat;
+
+        }
+
+
+        .wrapper {
+
+            width: 100%;
+
+            max-width: 460px;
+
+            text-align: center;
+
+        }
+
+
+        /* PREMIUM GLASS CARD */
+
+        .card {
+
+            position: relative;
+
+            overflow: hidden;
+
+            padding: 40px 30px;
+
+            border-radius: 24px;
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    rgba(23, 10, 48, 0.92),
+                    rgba(5, 17, 32, 0.90)
+                );
+
+            backdrop-filter: blur(20px);
+
+            -webkit-backdrop-filter: blur(20px);
+
+
+            /* CYAN + PURPLE BORDER */
+
+            border: 1px solid rgba(168, 85, 247, 0.65);
+
+
+            box-shadow:
+
+                0 30px 70px rgba(0, 0, 0, 0.75),
+
+                0 0 35px rgba(168, 85, 247, 0.15),
+
+                inset 0 0 25px rgba(6, 182, 212, 0.05);
+
+            transition: transform 0.3s ease;
+
+        }
+
+
+        /* PURPLE GLOW */
+
+        .card::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 280px;
+
+            height: 280px;
+
+            background: #8b5cf6;
+
+            border-radius: 50%;
+
+            filter: blur(130px);
+
+            opacity: 0.18;
+
+            top: -120px;
+
+            left: -120px;
+
+            z-index: 1;
+
+        }
+
+
+        /* CYAN GLOW */
+
+        .card::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 200px;
+
+            height: 200px;
+
+            background: #06b6d4;
+
+            border-radius: 50%;
+
+            filter: blur(120px);
+
+            opacity: 0.10;
+
+            bottom: -100px;
+
+            right: -100px;
+
+            z-index: 1;
+
+        }
+
+
+        .main-content {
+
+            position: relative;
+
+            z-index: 2;
+
+        }
+
+
+        /* PROFILE IMAGE */
+
+        .profile {
+
+            width: 120px;
+
+            height: 120px;
+
+            border-radius: 50%;
+
+            object-fit: cover;
+
+            border: 4px solid #a855f7;
+
+            box-shadow:
+
+                0 0 20px rgba(168, 85, 247, 0.5),
+
+                0 0 40px rgba(6, 182, 212, 0.15);
+
+            margin-bottom: 20px;
+
+        }
+
+
+        /* VERIFIED TEXT */
+
+        .verify {
+
+            color: #c084fc;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.5px;
+
+            text-transform: uppercase;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 8px;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .verify i {
+
+            color: #22d3ee;
+
+        }
+
+
+        h2 {
+
+            font-size: 26px;
+
+            color: #ffffff;
+
+            font-weight: 900;
+
+            letter-spacing: 0.5px;
+
+            text-shadow:
+
+                0 2px 15px rgba(168, 85, 247, 0.35);
+
+            margin-bottom: 20px;
+
+        }
+
+
+        /* STATS */
+
+        .stats {
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    rgba(168, 85, 247, 0.12),
+                    rgba(6, 182, 212, 0.08)
+                );
+
+            border-radius: 14px;
+
+            border: 1px solid rgba(168, 85, 247, 0.25);
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 10px;
+
+            padding: 18px;
+
+            text-align: center;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .stats-item {
+
+            color: #e2e8f0;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            line-height: 1.4;
+
+        }
+
+
+        .stats-item i {
+
+            font-size: 20px;
+
+            margin-bottom: 6px;
+
+            display: block;
+
+        }
+
+
+        .stats-item .english {
+
+            display: block;
+
+            font-weight: 700;
+
+            color: #c084fc;
+
+        }
+
+
+        .stats-item .telugu {
+
+            color: #ffffff;
+
+            opacity: 0.9;
+
+        }
+
+
+        /* DESCRIPTION */
+
+        .description {
+
+            margin-top: 15px;
+
+            margin-bottom: 22px;
+
+            line-height: 1.7;
+
+            font-size: 15px;
+
+            color: #cbd5e1;
+
+        }
+
+
+        /* MODERN CYAN PURPLE BUTTON */
+
+        .btn {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 12px;
+
+            width: 100%;
+
+            padding: 18px;
+
+            border-radius: 14px;
+
+            text-decoration: none;
+
+            color: #ffffff;
+
+            font-size: 16px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.5px;
+
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    #7c3aed,
+                    #06b6d4
+                );
+
+
+            box-shadow:
+
+                0 10px 30px rgba(124, 58, 237, 0.35),
+
+                0 0 20px rgba(6, 182, 212, 0.15);
+
+
+            transition: all 0.3s ease;
+
+            position: relative;
+
+            overflow: hidden;
+
+            border: 1px solid rgba(255, 255, 255, 0.15);
+
+        }
+
+
+        .btn:hover {
+
+            transform: translateY(-3px);
+
+            box-shadow:
+
+                0 15px 40px rgba(124, 58, 237, 0.5),
+
+                0 0 25px rgba(6, 182, 212, 0.25);
+
+        }
+
+
+        .btn::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+
+            left: -100%;
+
+            width: 100%;
+
+            height: 100%;
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    rgba(255,255,255,0.25),
+                    transparent
+                );
+
+            transition: 0.7s;
+
+        }
+
+
+        .btn:hover::before {
+
+            left: 100%;
+
+        }
+
+
+        /* BENEFITS */
+
+        .benefits {
+
+            margin-top: 25px;
+
+            background:
+
+                rgba(255, 255, 255, 0.035);
+
+            border:
+
+                1px solid rgba(168, 85, 247, 0.18);
+
+            border-radius: 14px;
+
+            padding: 20px;
+
+            text-align: left;
+
+        }
+
+
+        .benefits div {
+
+            padding: 10px 0;
+
+            color: #e2e8f0;
+
+            font-size: 14.5px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 14px;
+
+            border-bottom:
+
+                1px solid rgba(255, 255, 255, 0.05);
+
+        }
+
+
+        .benefits div:last-child {
+
+            border-bottom: none;
+
+        }
+
+
+        .benefits .english-text {
+
+            color: #c084fc;
+
+            font-weight: 700;
+
+        }
+
+
+        /* TIMER */
+
+        .timer {
+
+            margin-top: 22px;
+
+            color: #94a3b8;
+
+            font-size: 13px;
+
+        }
+
+
+        .timer span {
+
+            color: #22d3ee;
+
+            font-weight: bold;
+
+        }
+
+
+        /* DISCLAIMER */
+
+        .disclaimer {
+
+            margin-top: 25px;
+
+            font-size: 11px;
+
+            line-height: 1.8;
+
+            color: #94a3b8;
+
+            padding: 0 10px;
+
+        }
+
+
+        /* MOBILE */
+
+        @media(max-width: 480px) {
+
+            .card {
+
+                padding: 30px 20px;
+
+            }
+
+            h2 {
+
+                font-size: 22px;
+
+            }
+
+            .profile {
+
+                width: 100px;
+
+                height: 100px;
+
+            }
+
+            .btn {
+
+                font-size: 15px;
+
+                padding: 16px;
+
+            }
+
+            .stats {
+
+                padding: 12px;
+
+            }
+
+            .stats-item {
+
+                font-size: 12px;
+
+            }
+
+        }
+
+    </style>
+
+
+    
+
+</head>
+
+
+<body>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1710780213464744');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1710780213464744&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+    <div class="wrapper">
+
+
+        <div class="card">
+
+
+            <div class="main-content">
+
+
+                <!-- PROFILE IMAGE -->
+
+                <img
+
+                    src="https://growthsteps.pages.dev/MNFF1.jpg"
+
+                    class="profile"
+
+                    alt="Kashis Profile"
+
+                >
+
+
+                <div class="verify">
+
+                    <i class="fas fa-check-circle"></i>
+
+                    తెలుగు విద్యాపరమైన ట్రేడింగ్ కమ్యూనిటీ
+
+                </div>
+
+
+                <h2>
+
+                    📚 LEARN WITH MUNAAF 📚
+
+                </h2>
+
+
+                <!-- STATS -->
+
+                <div class="stats">
+
+
+                    <div class="stats-item">
+
+                        <i
+
+                            class="fas fa-star"
+
+                            style="color:#c084fc"
+
+                        ></i>
+
+                        <span class="english">
+
+                            START-Friendly
+
+                        </span>
+
+                        <span class="telugu">
+
+                            అభ్యాసం
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="stats-item">
+
+                        <i
+
+                            class="fas fa-users"
+
+                            style="color:#22d3ee"
+
+                        ></i>
+
+                        <span class="english">
+
+                            Active Telugu
+
+                        </span>
+
+                        <span class="telugu">
+
+                            సమూహం
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="stats-item">
+
+                        <i
+
+                            class="fas fa-fire"
+
+                            style="color:#fb7185"
+
+                        ></i>
+
+                        <span class="english">
+
+                            Daily
+
+                        </span>
+
+                        <span class="telugu">
+
+                            జ్ఞాన అప్‌డేట్లు
+
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+                <p class="description">
+
+                    📚 Stock Market & Financial
+
+                    <span style="color:#cbd5e1">
+
+                        అవగాహన కమ్యూనిటీ
+
+                    </span>.
+
+                </p>
+
+
+                <!-- TELEGRAM BUTTON -->
+
+                <a
+
+                    class="btn"
+
+                    id="telegramBtn"
+
+                    href="https://t.me/+OhWDGYOI6NdmMjk9"
+
+                    rel="noopener noreferrer"
+
+                >
+
+                    <i class="fab fa-telegram"></i>
+
+                    JOIN FREE LEARNING COMMUNITY
+
+                    <i class="fas fa-arrow-right"></i>
+
+                </a>
+
+
+                <!-- BENEFITS -->
+
+                <div class="benefits">
+
+
+                    <div>
+
+                        <i
+
+                            class="fas fa-chart-line"
+
+                            style="color:#4ade80"
+
+                        ></i>
+
+                        <span class="telugu-text">
+
+                            Daily
+
+                        </span>
+
+                        <span class="english-text">
+
+                            మార్కెట్ అప్‌డేట్లు
+
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <i
+
+                            class="fas fa-book-open"
+
+                            style="color:#c084fc"
+
+                        ></i>
+
+                        <span class="telugu-text">
+
+                            Free
+
+                        </span>
+
+                        <span class="english-text">
+
+                            లెర్నింగ్ మెటీరియల్
+
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <i
+
+                            class="fas fa-bullseye"
+
+                            style="color:#fb7185"
+
+                        ></i>
+
+                        <span class="telugu-text">
+
+                            తెలుగులో ఈజీగా స్టాక్ మార్కెట్
+
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <i
+
+                            class="fas fa-users"
+
+                            style="color:#22d3ee"
+
+                        ></i>
+
+                        <span class="telugu-text">
+
+                            Full తెలుగు కమ్యూనిటీ సపోర్ట్
+
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <i
+
+                            class="fas fa-lightbulb"
+
+                            style="color:#facc15"
+
+                        ></i>
+
+                        <span class="telugu-text">
+
+                            Market అవగాహన మరియు పరిజ్ఞానం
+
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- TIMER -->
+
+                <div class="timer">
+
+                    ⏳
+
+                    <span id="count">
+
+                        30
+
+                    </span>
+
+                    సెకన్లలో ఆటోమేటిక్‌గా రీడైరెక్ట్ అవుతుంది...
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+        <!-- DISCLAIMER -->
+
+        <div class="disclaimer">
+
+
+            <strong>
+
+                నిరాకరణ (Disclaimer):
+
+            </strong>
+
+
+            ఈ ప్లాట్‌ఫారమ్ కేవలం విద్యాపరమైన మరియు సమాచార ప్రయోజనాల కోసం మాత్రమే.
+
+            మేము ఎటువంటి పెట్టుబడి, ట్రేడింగ్ లేదా ఆర్థిక సలహాలను
+
+            (financial advice) అందించము.
+
+            ఏదైనా నిర్ణయం తీసుకునే ముందు మీ స్వంత పరిశోధన చేసుకోండి
+
+            లేదా మీ ఆర్థిక సలహాదారుని సంప్రదించండి.
+
+
+        </div>
+
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+
+        let time = 30;
+
+
+        let counter = document.getElementById("count");
+
+
+        const TELEGRAM_URL =
+
+            "https://t.me/+OhWDGYOI6NdmMjk9";
+
+
+        /* TELEGRAM BUTTON TRACKING */
+
+        document
+
+            .getElementById("telegramBtn")
+
+            .addEventListener("click", function(e) {
+
+
+                e.preventDefault();
+
+
+                const telegramLink = this.href;
+
+
+                if (typeof fbq !== 'undefined') {
+
+
+                    fbq(
+
+                        'track',
+
+                        'Subscribe',
+
+                        {
+
+                            content_name:
+
+                                'Telegram Community (Telugu)',
+
+                            button_click:
+
+                                true
+
+                        },
+
+                        {
+
+                            eventID:
+
+                                'telegram_subscribe_' +
+
+                                Date.now()
+
+                        }
+
+                    );
+
+
+                }
+
+
+                setTimeout(() => {
+
+
+                    window.location.href = telegramLink;
+
+
+                }, 1000);
+
+
+            });
+
+
+        /* AUTO REDIRECT COUNTDOWN */
+
+        const countdown = setInterval(() => {
+
+
+            time--;
+
+
+            if (counter) {
+
+                counter.innerText = time;
+
+            }
+
+
+            if (time <= 0) {
+
+
+                clearInterval(countdown);
+
+
+                window.location.href = TELEGRAM_URL;
+
+            }
+
+
+        }, 1000);
+
+
+    </script>
+
+
+</body>
+
+</html>
