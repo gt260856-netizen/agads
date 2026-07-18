@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TOPG</title>
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 20px;
+
+            color: white;
+
+            background:
+
+                radial-gradient(circle at top left,
+                    rgba(59, 130, 246, 0.25),
+                    transparent 35%),
+
+                radial-gradient(circle at bottom right,
+                    rgba(124, 58, 237, 0.25),
+                    transparent 35%),
+
+                linear-gradient(135deg,
+                    #080d1c,
+                    #111a35,
+                    #101827);
+
+            overflow-x: hidden;
+
+        }
+
+
+        /* Background Glow */
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            width: 300px;
+            height: 300px;
+
+            background: rgba(37, 99, 235, 0.18);
+
+            filter: blur(100px);
+
+            top: -100px;
+            left: -100px;
+
+            z-index: -1;
+
+        }
+
+
+        body::after {
+
+            content: "";
+
+            position: fixed;
+
+            width: 300px;
+            height: 300px;
+
+            background: rgba(124, 58, 237, 0.18);
+
+            filter: blur(100px);
+
+            bottom: -100px;
+            right: -100px;
+
+            z-index: -1;
+
+        }
+
+
+        /* Main Wrapper */
+
+        .main-wrapper {
+
+            width: 100%;
+
+            max-width: 430px;
+
+            text-align: center;
+
+        }
+
+
+        /* Card */
+
+        .card {
+
+            width: 100%;
+
+            padding: 35px 24px 30px;
+
+            border-radius: 26px;
+
+            background:
+
+                linear-gradient(145deg,
+                    rgba(255, 255, 255, 0.10),
+                    rgba(255, 255, 255, 0.035));
+
+            backdrop-filter: blur(22px);
+
+            -webkit-backdrop-filter: blur(22px);
+
+            border: 1px solid rgba(255, 255, 255, 0.16);
+
+            box-shadow:
+
+                0 25px 70px rgba(0, 0, 0, 0.55),
+
+                inset 0 1px 1px rgba(255, 255, 255, 0.12);
+
+            animation: float 5s ease-in-out infinite;
+
+        }
+
+
+        @keyframes float {
+
+            0%,
+            100% {
+
+                transform: translateY(0);
+
+            }
+
+            50% {
+
+                transform: translateY(-7px);
+
+            }
+
+        }
+
+
+        /* Profile Image */
+
+        .profile {
+
+            width: 108px;
+
+            height: 108px;
+
+            border-radius: 50%;
+
+            object-fit: cover;
+
+            margin-bottom: 18px;
+
+            border: 4px solid rgba(255, 255, 255, 0.9);
+
+            box-shadow:
+
+                0 0 0 6px rgba(255, 255, 255, 0.05),
+
+                0 0 35px rgba(59, 130, 246, 0.5);
+
+        }
+
+
+        /* Heading */
+
+        h2 {
+
+            font-size: 22px;
+
+            letter-spacing: 0.5px;
+
+            margin-bottom: 14px;
+
+            color: #ffffff;
+
+        }
+
+
+        /* Description */
+
+        .text {
+
+            font-size: 14px;
+
+            line-height: 1.8;
+
+            color: rgba(255, 255, 255, 0.86);
+
+            margin-bottom: 26px;
+
+        }
+
+
+        /* Telegram Button */
+
+        .btn {
+
+            width: 100%;
+
+            min-height: 58px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 11px;
+
+            padding: 16px 18px;
+
+            border-radius: 16px;
+
+            background:
+
+                linear-gradient(135deg,
+
+                    #229ed9,
+
+                    #1677c8);
+
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            position: relative;
+
+            overflow: hidden;
+
+            transition: 0.3s ease;
+
+            box-shadow:
+
+                0 10px 25px rgba(34, 158, 217, 0.25);
+
+        }
+
+
+        .btn:hover {
+
+            transform: translateY(-3px);
+
+            box-shadow:
+
+                0 15px 35px rgba(34, 158, 217, 0.45);
+
+        }
+
+
+        .btn:active {
+
+            transform: scale(0.97);
+
+        }
+
+
+        .btn i {
+
+            font-size: 20px;
+
+        }
+
+
+        /* Button Shine Effect */
+
+        .btn::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+
+            left: -100%;
+
+            width: 60%;
+
+            height: 100%;
+
+            background: linear-gradient(
+
+                90deg,
+
+                transparent,
+
+                rgba(255, 255, 255, 0.25),
+
+                transparent
+
+            );
+
+            transform: skewX(-20deg);
+
+            animation: shine 3.5s infinite;
+
+        }
+
+
+        @keyframes shine {
+
+            0% {
+
+                left: -100%;
+
+            }
+
+            50% {
+
+                left: 130%;
+
+            }
+
+            100% {
+
+                left: 130%;
+
+            }
+
+        }
+
+
+        /* Sparkles */
+
+        .btn span {
+
+            position: absolute;
+
+            width: 5px;
+
+            height: 5px;
+
+            background: white;
+
+            border-radius: 50%;
+
+            opacity: 0;
+
+            animation: spark 3s infinite;
+
+        }
+
+
+        .btn span:nth-child(3) {
+
+            top: 8px;
+
+            left: 20%;
+
+        }
+
+
+        .btn span:nth-child(4) {
+
+            top: 8px;
+
+            left: 50%;
+
+            animation-delay: 1s;
+
+        }
+
+
+        .btn span:nth-child(5) {
+
+            top: 8px;
+
+            left: 80%;
+
+            animation-delay: 2s;
+
+        }
+
+
+        @keyframes spark {
+
+            0% {
+
+                transform: translateY(10px);
+
+                opacity: 0;
+
+            }
+
+            30% {
+
+                opacity: 1;
+
+            }
+
+            100% {
+
+                transform: translateY(-35px);
+
+                opacity: 0;
+
+            }
+
+        }
+
+
+        /* Countdown */
+
+        .timer {
+
+            margin-top: 18px;
+
+            font-size: 13px;
+
+            color: rgba(255, 255, 255, 0.65);
+
+        }
+
+
+        #count {
+
+            color: #60a5fa;
+
+            font-weight: bold;
+
+        }
+
+
+        /* Disclaimer */
+
+        .disclaimer {
+
+            margin-top: 18px;
+
+            font-size: 11px;
+
+            line-height: 1.6;
+
+            color: rgba(255, 255, 255, 0.48);
+
+        }
+
+
+        /* Ads */
+
+        .ads {
+
+            margin-top: 8px;
+
+            font-size: 11px;
+
+            color: rgba(255, 255, 255, 0.45);
+
+        }
+
+
+        .ads a {
+
+            color: #38bdf8;
+
+            font-weight: bold;
+
+            text-decoration: none;
+
+        }
+
+
+        /* Mobile Responsive */
+
+        @media (max-width: 480px) {
+
+            body {
+
+                padding: 16px;
+
+            }
+
+
+            .card {
+
+                padding: 30px 20px 26px;
+
+                border-radius: 23px;
+
+            }
+
+
+            .profile {
+
+                width: 100px;
+
+                height: 100px;
+
+            }
+
+
+            h2 {
+
+                font-size: 20px;
+
+            }
+
+
+            .text {
+
+                font-size: 13.5px;
+
+                line-height: 1.75;
+
+            }
+
+
+            .btn {
+
+                font-size: 15px;
+
+                min-height: 56px;
+
+            }
+
+        }
+
+
+        @media (max-width: 350px) {
+
+            .card {
+
+                padding: 26px 16px;
+
+            }
+
+
+            .profile {
+
+                width: 90px;
+
+                height: 90px;
+
+            }
+
+
+            h2 {
+
+                font-size: 18px;
+
+            }
+
+
+            .btn {
+
+                font-size: 14px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1771749027610980');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1771749027610980&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+
+    <div class="main-wrapper">
+
+
+        <div class="card">
+
+
+            <img src="https://github.com/gt260856-netizen/karol/releases/download/k/karol.jpg"
+
+                 class="profile"
+
+                 alt="HAFIZ SHAKIL TRADER">
+
+
+            <h2>TRADE WITH KAROL</h2>
+
+
+            <div class="text">
+
+                Start learning with Expert Calls🔥
+
+                <br>
+
+                Trusted by 12,000+ Traders🌍
+
+                <br>
+
+                Join our Channel for daily updates✅
+
+            </div>
+
+
+            <a class="btn"
+
+               href="https://t.me/+1cEBNBp9VR8wNGE9"
+
+               target="_blank">
+
+
+                <i class="fab fa-telegram"></i>
+
+                <span>VIP Telegram group</span>
+
+                <i class="fab fa-telegram"></i>
+
+
+                <span></span>
+
+                <span></span>
+
+                <span></span>
+
+
+            </a>
+
+
+            <div class="timer">
+
+                Redirecting in
+
+                <span id="count">30</span>
+
+                seconds...
+
+            </div>
+
+
+        </div>
+
+
+        <div class="disclaimer">
+
+            This channel is for educational and informational purposes only.
+
+        </div>
+
+
+        <div class="ads">
+
+            ads Managed by
+
+            <a href="https://t.me/+1cEBNBp9VR8wNGE9"
+
+               target="_blank">
+
+                TOPG
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <script>
+
+
+        let time = 30;
+
+        let counter = document.getElementById("count");
+
+
+        let countdown = setInterval(() => {
+
+
+            time--;
+
+
+            counter.innerText = time;
+
+
+            if (time <= 0) {
+
+
+                clearInterval(countdown);
+
+
+                window.location.href =
+
+                    "https://t.me/+1cEBNBp9VR8wNGE9";
+
+
+            }
+
+
+        }, 1000);
+
+
+    </script>
+
+
+</body>
+
+</html>
