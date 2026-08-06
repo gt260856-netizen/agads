@@ -1,208 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GAUTAM KUMAR JHA | Official Community</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trade With Gautam</title>
+    
 
-<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
 
-<style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
 
-body {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px 16px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  color: #eaf6ff;
-  background: #060D16;
-  overflow-x: hidden;
-}
+        .container {
+            max-width: 450px;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+        }
 
-.wrapper {
-  width: 100%;
-  max-width: 440px;
-}
+        .profile-img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 25px;
+            border: 2px solid #333;
+        }
 
-.card {
-  display: flex;
-  background: #0A1723;
-  border: 1px solid rgba(42, 171, 238, 0.18);
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.55);
-}
+        h1 {
+            color: #FFEB3B;
+            font-size: 26px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+        }
 
-/* Left color column with vertical badge + avatar */
-.side-col {
-  width: 84px;
-  flex-shrink: 0;
-  background: linear-gradient(180deg, #0088CC 0%, #12314a 100%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px 8px;
-  position: relative;
-}
-.side-col .avatar {
-  width: 56px;
-  height: 56px;
-  border-radius: 14px;
-  object-fit: cover;
-  border: 2px solid rgba(255,255,255,0.5);
-  background: #12314a;
-  margin-bottom: 14px;
-}
-.side-col .vert-label {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  font-size: 9.5px;
-  font-weight: 800;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.85);
-  margin-top: auto;
-}
-.side-col i.check {
-  color: #ffffff;
-  background: rgba(255,255,255,0.15);
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 11px;
-  margin-bottom: 10px;
-}
+        .highlight-box {
+            background-color: #ffffff;
+            color: #000000;
+            border-radius: 50px;
+            padding: 18px 20px;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1.4;
+            margin-bottom: 25px;
+        }
 
-/* Right content column */
-.main-col {
-  flex: 1;
-  padding: 20px 18px;
-  min-width: 0;
-}
-.main-col h1 {
-  font-size: 18px;
-  font-weight: 800;
-  color: #ffffff;
-  letter-spacing: -0.2px;
-  line-height: 1.15;
-  margin-bottom: 3px;
-}
-.main-col .subtitle {
-  font-size: 11.5px;
-  color: #7fa9c4;
-  margin-bottom: 14px;
-}
+        .btn-telegram {
+            display: block;
+            background-color: #1E73BE;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 700;
+            padding: 16px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            transition: background 0.3s ease;
+            box-shadow: 0 4px 15px rgba(30, 115, 190, 0.4);
+        }
 
-/* Small stat badges instead of grid/pills */
-.badge-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-bottom: 16px;
-}
-.mini-badge {
-  font-size: 10px;
-  font-weight: 700;
-  padding: 5px 10px;
-  border-radius: 6px;
-  background: rgba(42, 171, 238, 0.1);
-  border: 1px solid rgba(42, 171, 238, 0.25);
-  color: #6cc9f5;
-}
+        .btn-telegram:hover {
+            background-color: #155a96;
+        }
 
-/* Compact feature list with thin left rule */
-.feature-list {
-  display: flex;
-  flex-direction: column;
-  gap: 9px;
-  margin-bottom: 18px;
-  border-left: 2px solid rgba(42, 171, 238, 0.2);
-  padding-left: 12px;
-}
-.feature-list .f-item {
-  font-size: 12px;
-  color: #d7e9f5;
-  line-height: 1.4;
-}
-.feature-list .f-item i {
-  color: #2AABEE;
-  font-size: 10px;
-  margin-right: 6px;
-}
+        .sub-text {
+            color: #FFEB3B;
+            font-size: 15px;
+            line-height: 1.5;
+            margin-bottom: 30px;
+            padding: 0 10px;
+        }
 
-.cta-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  width: 100%;
-  padding: 18px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, #2AABEE 0%, #0088CC 100%);
-  color: #ffffff;
-  font-size: 15px;
-  font-weight: 900;
-  text-decoration: none;
-  letter-spacing: 0.4px;
-  text-transform: uppercase;
-  border: 2px solid rgba(255,255,255,0.25);
-  box-shadow: 0 0 0 4px rgba(42, 171, 238, 0.12), 0 14px 30px rgba(42, 171, 238, 0.45);
-  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s ease;
-  cursor: pointer;
-  animation: pulse-glow 2.2s ease-in-out infinite;
-}
-.cta-btn i.plane-icon {
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 13px;
-  flex-shrink: 0;
-}
-.cta-btn:active { transform: scale(0.97); }
-@keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 0 4px rgba(42, 171, 238, 0.12), 0 14px 30px rgba(42, 171, 238, 0.45); }
-  50% { box-shadow: 0 0 0 8px rgba(42, 171, 238, 0.18), 0 14px 34px rgba(42, 171, 238, 0.6); }
-}
+        .features-list {
+            text-align: left;
+            max-width: 360px;
+            margin: 0 auto 30px auto;
+            list-style: none;
+        }
 
-.timer-text {
-  margin-top: 10px;
-  font-size: 10.5px;
-  color: #4d7189;
-}
-.timer-text span {
-  color: #2AABEE;
-  font-weight: 700;
-}
+        .features-list li {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
 
-.disclaimer {
-  margin-top: 16px;
-  font-size: 10px;
-  line-height: 1.6;
-  color: #3d5468;
-  text-align: center;
-  padding: 0 8px;
-}
+        .features-list li::before {
+            content: "✓";
+            color: #2ecc71;
+            font-weight: 900;
+            margin-right: 12px;
+            font-size: 18px;
+        }
 
-@media (max-width: 480px) {
-  .side-col { width: 68px; padding: 16px 6px; }
-  .side-col .avatar { width: 46px; height: 46px; }
-  .main-col { padding: 16px 14px; }
-  .main-col h1 { font-size: 16px; }
-}
-</style>
+        hr {
+            border: none;
+            border-top: 2px solid #ff0000;
+            margin: 35px 0;
+        }
 
-</head>
+        .timer-text {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .disclaimer {
+            font-size: 12px;
+            color: #aaaaaa;
+            line-height: 1.6;
+            text-align: justify;
+            padding: 0 10px;
+        }
+    </style>
+<script data-cfasync="false" nonce="2e055973-fb38-49b0-a11a-f2e66c74ea2d">try{(function(w,d){!function(mw,mx,my,mz){if(mw.zaraz)console.error("zaraz is loaded twice");else{mw[my]=mw[my]||{};mw[my].executed=[];mw.zaraz={deferred:[],listeners:[]};mw.zaraz._v="5887";mw.zaraz._n="2e055973-fb38-49b0-a11a-f2e66c74ea2d";mw.zaraz.q=[];mw.zaraz._f=function(mA){return async function(){var mB=Array.prototype.slice.call(arguments);mw.zaraz.q.push({m:mA,a:mB})}};for(const mC of["track","set","debug"])mw.zaraz[mC]=mw.zaraz._f(mC);mw.zaraz.init=()=>{var mD=mx.getElementsByTagName(mz)[0],mE=mx.createElement(mz),mF=mx.getElementsByTagName("title")[0];mF&&(mw[my].t=mx.getElementsByTagName("title")[0].text);mw[my].x=Math.random();mw[my].w=mw.screen.width;mw[my].h=mw.screen.height;mw[my].j=mw.innerHeight;mw[my].e=mw.innerWidth;mw[my].l=mw.location.href;mw[my].r=mx.referrer;mw[my].k=mw.screen.colorDepth;mw[my].n=mx.characterSet;mw[my].o=(new Date).getTimezoneOffset();if(mw.dataLayer)for(const mG of Object.entries(Object.entries(dataLayer).reduce((mH,mI)=>({...mH[1],...mI[1]}),{})))zaraz.set(mG[0],mG[1],{scope:"page"});mw[my].q=[];for(;mw.zaraz.q.length;){const mJ=mw.zaraz.q.shift();mw[my].q.push(mJ)}mE.defer=!0;for(const mK of[localStorage,sessionStorage])Object.keys(mK||{}).filter(mM=>mM.startsWith("_zaraz_")).forEach(mL=>{try{mw[my]["z_"+mL.slice(7)]=JSON.parse(mK.getItem(mL))}catch{mw[my]["z_"+mL.slice(7)]=mK.getItem(mL)}});mE.referrerPolicy="origin";mE.src="/cdn-cgi/zaraz/s.js?z="+btoa(encodeURIComponent(JSON.stringify(mw[my])));mD.parentNode.insertBefore(mE,mD)};["complete","interactive"].includes(mx.readyState)?zaraz.init():mw.addEventListener("DOMContentLoaded",zaraz.init)}}(w,d,"zarazData","script");window.zaraz._p=async nn=>new Promise(no=>{if(nn){nn.e&&nn.e.forEach(np=>{try{const nq=d.querySelector("script[nonce]"),nr=nq?.nonce||nq?.getAttribute("nonce"),ns=d.createElement("script");nr&&(ns.nonce=nr);ns.innerHTML=np;ns.onload=()=>{d.head.removeChild(ns)};d.head.appendChild(ns)}catch(nt){console.error(`Error executing script: ${np}\n`,nt)}});Promise.allSettled((nn.f||[]).map(nu=>fetch(nu[0],nu[1])))}no()});zaraz._p({"e":["(function(w,d){})(window,document)"]});})(window,document)}catch(e){throw fetch("/cdn-cgi/zaraz/t"),e;};</script></head>
 <body>
 <!-- Meta Pixel Code -->
 <script>
@@ -221,76 +148,102 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=991460383930244&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
+    <div class="container">
+        <!-- Profile Image (Reference image 106371.jpg) -->
+        <img src="https://github.com/gt260856-netizen/gautam/releases/download/gautam/WhatsApp.Image.2026-06-12.at.11.42.50.PM.jpeg" alt="Trade With Munaf" class="profile-img"> <!-- <-- 2. Yahan apni photo ka link dalein -->
 
-<div class="wrapper">
-  <div class="card">
+        <!-- Title -->
+        <h1>TRADE WITH GAUTAM JHA</h1>
 
-    <!-- Left color column -->
-    <div class="side-col">
-      <i class="fas fa-check check"></i>
-      <img src="https://github.com/gt260856-netizen/gautambhai/releases/download/gautam/gautam.jha01.jpg" class="avatar" alt="Profile Image" width="56" height="56" decoding="async" fetchpriority="high">
-      <div class="vert-label">Verified</div>
+        <!-- Highlight Badge -->
+        <div class="highlight-box">
+            Get Daily Stock Market Insights <br> – Free on Telegram
+        </div>
+
+        <!-- First Button -->
+        <a href="https://t.me/+Zc7Jdhta-kZkODdl" target="_blank" class="cta-btn btn-telegram"> <!-- <-- 3. Yahan Telegram link dalein -->
+            🚀 JOIN TELEGRAM FREE
+        </a>
+
+        <!-- Sub Description -->
+        <p class="sub-text">
+            Get market updates, potential trades and expert analysis straight to your phone – Absolutely Free
+        </p>
+
+        <!-- Features List -->
+        <ul class="features-list">
+            <li>Daily NIFTY & BankNIFTY Levels</li>
+            <li>No Paid Tips – Purely Educational</li>
+            <li>5+ Years of Market Experience</li>
+            <li>20000+ Subscribers Trust Us Already</li>
+        </ul>
+
+        <!-- Red Divider Line (As seen in image 106373.jpg) -->
+        <hr>
+
+        <!-- Second Button -->
+        <a href="https://t.me/+Zc7Jdhta-kZkODdl" target="_blank" class="cta-btn btn-telegram"> <!-- <-- 4. Yahan bhi Telegram link dalein -->
+            🚀 JOIN TELEGRAM FREE
+        </a>
+
+        <!-- Redirect Timer -->
+        <div class="timer-text">
+            Redirecting in <span id="countdown">10</span>s...
+        </div>
+
+        <!-- Disclaimer -->
+        <p class="disclaimer">
+            <strong>Disclaimer:</strong> This channel is for educational and informational purposes only. We do not provide investment advice or guaranteed returns. Trading in the stock market involves risk. Please consult your financial advisor before making any investment decisions.
+        </p>
     </div>
 
-    <!-- Right content column -->
-    <div class="main-col">
-      <h1>GAUTAM KUMAR JHA</h1>
-      <p class="subtitle">Stock Market &amp; Financial Educator</p>
+    <script>
+        // --- CONFIGURATION ---
+        const telegramLink = "https://t.me/+Zc7Jdhta-kZkODdl"
+        +"; // <-- 5. Yahan apna main Telegram Link paste karein
+        let timeLeft = 20;
+        
+        // --- DEVICE-BASED ONE-TIME EVENT FUNCTION ---
+        function fireSubscribeEvent() {
+            // Check karega ki kya is device par pehle click hua h
+            if (!localStorage.getItem('subscribe_fired')) {
+                
+                // Meta Pixel Subscribe Event sirf tabhi fire hoga jab user khud click karega
+                if (typeof fbq !== 'undefined') {
+                    fbq('track', 'Subscribe');
+                }
+                
+                // Device par flag save ho jayega permanently
+                localStorage.setItem('subscribe_fired', 'true');
+                console.log('Subscribe event fired on user click.');
+            } else {
+                console.log('User already clicked before. Event blocked to avoid duplication.');
+            }
+        }
 
-      <div class="badge-row">
-        <div class="mini-badge">100% Beginner</div>
-        <div class="mini-badge">Daily Updates</div>
-        <div class="mini-badge">Free Access</div>
-      </div>
+        // --- BUTTONS CLICK LOGIC ---
+        const buttons = document.querySelectorAll('.cta-btn');
+        buttons.forEach(button => {
+            button.addEventListener('click', function() {
+                fireSubscribeEvent();
+            });
+        });
 
-      <div class="feature-list">
-        <div class="f-item"><i class="fas fa-circle"></i>Daily market updates &amp; trading insights</div>
-        <div class="f-item"><i class="fas fa-circle"></i>Free educational content, no hidden fees</div>
-        <div class="f-item"><i class="fas fa-circle"></i>Easy explanations built for beginners</div>
-        <div class="f-item"><i class="fas fa-circle"></i>Full, active community support</div>
-      </div>
+        // --- 10 SECOND COUNTDOWN & AUTO REDIRECT ONLY ---
+        const countdownElement = document.getElementById('countdown');
+        
+        const timer = setInterval(function() {
+            timeLeft--;
+            countdownElement.textContent = timeLeft;
+            
+            if (timeLeft <= 0) {
+                clearInterval(timer);
+                // Timer khatam hone par KOI EVENT FIRE NAHI HOGA. Seedha redirect hoga.
+                window.location.href = telegramLink;
+            }
+        }, 1000);
+    </script>
 
-      <a class="cta-btn" id="telegramBtn" href="https://t.me/+Zc7Jdhta-kZkODdl" rel="noopener noreferrer">
-        <i class="fab fa-telegram-plane plane-icon"></i> JOIN FREE TELEGRAM COMMUNITY
-      </a>
-      <div class="timer-text">
-        ⏳ Redirecting automatically in <span id="count">30</span>s...
-      </div>
-    </div>
-  </div>
-
-  <div class="disclaimer">
-    <strong>Disclaimer:</strong> This platform is for educational and informational purposes only. We do not provide any financial advice. Please do your own research before making any investment decisions.
-  </div>
-</div>
-
-<script>
-(function() {
-  const telegramLink = "https://t.me/+Zc7Jdhta-kZkODdl";
-  let time = 30;
-  const counter = document.getElementById("count");
-  const telegramBtn = document.getElementById("telegramBtn");
-
-  telegramBtn.addEventListener("click", function(e) {
-    e.preventDefault();
-    if (window.fbq) {
-      fbq('track', 'Subscribe', { content_name: 'Telegram Community', button_click: true }, { eventID: 'telegram_subscribe_' + Date.now() });
-    }
-    setTimeout(() => {
-      window.location.href = telegramLink;
-    }, 200);
-  });
-
-  const countdown = setInterval(() => {
-    time--;
-    counter.textContent = time;
-    if (time <= 0) {
-      clearInterval(countdown);
-      window.location.href = telegramLink;
-    }
-  }, 1000);
-})();
-</script>
-
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"3bc5b6f7ce264fc3a85f8df0f110eb32","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
